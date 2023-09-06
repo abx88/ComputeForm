@@ -205,9 +205,9 @@ if tipo_pezzo =='Chiocciole':
         tempo_altrelavU = tempo_altrelavC
     else:
         if materiale == 'brall':
-            tempo_asportazioneU = tempo_asportazioneC*1.3
-            tempo_lav_accessorieU = tempo_lav_accessorieC*1.2
-            tempo_altrelavU = tempo_altrelavC*1.2
+            tempo_asportazioneU = tempo_asportazioneC*1.5
+            tempo_lav_accessorieU = tempo_lav_accessorieC*1.5
+            tempo_altrelavU = tempo_altrelavC*1.5
         else:
             tempo_asportazioneU = tempo_asportazione*0.8  
             tempo_lav_accessorieU = tempo_lav_accessorieC*0.8
