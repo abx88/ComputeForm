@@ -345,11 +345,11 @@ if tipo_pezzo =='Chiocciole':
     n_piazzaturaMann=col5.number_input("n° piazzature mannaioni = ", value = 0, step = 1)
     tempo_piazzatura = n_piazzatura*tempo_piazzaturaU + n_piazzaturaMann*tempo_piazzaturaMann
     tempo_tornitura = totaleTornituraEC+totaleTornituraIC
-    tempo_altre_lav = totale_tempo_altrelavEC+totale_tempo_altrelavIC
+    tempo_altre_lav = totale_tempo_altrelavEC+totale_tempo_altrelavIC+tempo_preforo
     tempo_totale_senza_piazz = totaleEC+totaleIC+tempo_lavorazioni_aggiuntive
     tempo_totale_con_piazz = totaleEC+totaleIC+tempo_piazzatura+tempo_lavorazioni_aggiuntive
 
-    st.text("totale tempo preforo min " + str(tempo_preforo))
+    
     st.text("totale tempo tornitura min " + str(tempo_tornitura))
     st.text("totale tempo altre lavorazioni min " + str(tempo_altre_lav))
     st.text("totale tempo lavorazioni aggiuntive min " + str(tempo_lavorazioni_aggiuntive))
@@ -432,9 +432,9 @@ df['tempo_lav_aggiuntive'] = df['tempo_lav_aggiuntive'].round()
 df['tempo_lav_aggiuntive'] = df['tempo_lav_aggiuntive'].astype(int)
 
 #inserimento tempo preforo
-df['tempo preforo'] = tempo_preforo
+
 #totale tempi
-df['totale_tempo_lav'] = df['tempi_tornitura']+df['tempo_altre_lav']+df['tempo_lav_aggiuntive']+df['tempo preforo']
+df['totale_tempo_lav'] = df['tempi_tornitura']+df['tempo_altre_lav']+df['tempo_lav_aggiuntive']
 df['totale_tempo_con_Piazzatura']=df['totale_tempo_lav']+(df['piazzatura_totale']/df['pz'])
 df['variazione'] = df['totale_tempo_con_Piazzatura'].pct_change()*100
 
