@@ -216,6 +216,18 @@ if tipo_pezzo =='Chiocciole':
     st.sidebar.text("tempo U. asportazione Chiocciole = " + str(tempo_asportazioneU))
     st.sidebar.text("tempo U. lav. accessorie Chiocciole = " + str(tempo_lav_accessorieU))
     st.sidebar.text("tempo U. altre lav. Chiocciole = " + str(tempo_altrelavU))
+
+    st.subheader("preforo")
+    col5, col6, = st.columns(2)
+    diam_preforo = col5.number_input('inserire diametro punta preforo', value = 0, step = 1)
+    lpreforo = col6.number_input('inserire lunghezza da preforare', value = 0, step = 1)
+    asportazione_preforo = ((math.pi * ((diam_preforo/2) ** 2) * lpreforo ))
+    if diam_preforo !=0:
+        tempo_preforo = round(tempo_asportazioneU*asportazione_preforo)
+    else:
+        tempo_preforo = 0
+    st.text("asportazione mm^2 preforo" + str(asportazione_preforo))
+    st.text("tempo solo tornitura lato A min " + str(tempo_preforo))
     
     
     st.subheader("Esterno")
@@ -334,6 +346,7 @@ if tipo_pezzo =='Chiocciole':
     tempo_totale_senza_piazz = totaleEC+totaleIC+tempo_lavorazioni_aggiuntive
     tempo_totale_con_piazz = totaleEC+totaleIC+tempo_piazzatura+tempo_lavorazioni_aggiuntive
 
+    st.text("totale tempo preforo min " + str(tempo_preforo))
     st.text("totale tempo tornitura min " + str(tempo_tornitura))
     st.text("totale tempo altre lavorazioni min " + str(tempo_altre_lav))
     st.text("totale tempo lavorazioni aggiuntive min " + str(tempo_lavorazioni_aggiuntive))
@@ -415,8 +428,10 @@ df['tempo_lav_aggiuntive'] = tempo_lavorazioni_aggiuntiveSerie
 df['tempo_lav_aggiuntive'] = df['tempo_lav_aggiuntive'].round()
 df['tempo_lav_aggiuntive'] = df['tempo_lav_aggiuntive'].astype(int)
 
+#inserimento tempo preforo
+df['tempo preforo'] = tempo_preforo
 #totale tempi
-df['totale_tempo_lav'] = df['tempi_tornitura']+df['tempo_altre_lav']+df['tempo_lav_aggiuntive']
+df['totale_tempo_lav'] = df['tempi_tornitura']+df['tempo_altre_lav']+df['tempo_lav_aggiuntive']+df['tempo preforo']
 df['totale_tempo_con_Piazzatura']=df['totale_tempo_lav']+(df['piazzatura_totale']/df['pz'])
 df['variazione'] = df['totale_tempo_con_Piazzatura'].pct_change()*100
 
@@ -457,6 +472,7 @@ if tipo_pezzo == 'Chiocciole':
                          'calcolo asportazione interno': totale_calcolo_asportazione_IC,
                          'altre lav torn lato interno': [altre_lavTornIC],
                          'altre lav interno': [altre_lavIC],
+                         'tempo preforo': tempo_preforo,
                          'tempo lav aggiuntive': tempo_lavorazioni_aggiuntive,
                          'piazzature varie':n_piazzatura,
                          'piazzature mannaioni': n_piazzaturaMann}
