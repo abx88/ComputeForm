@@ -201,18 +201,18 @@ if tipo_pezzo =='Chiocciole':
     materiale = st.sidebar.radio("materiale", ('bronzo-ottone-avp', 'brall', 'mat_plastico'))
     if materiale == 'bronzo-ottone-avp':
         tempo_asportazioneU = tempo_asportazione
-        tempo_preforo = tempo_asportazione*1.5
+        tempo_preforoU = tempo_asportazione*1.5
         tempo_lav_accessorieU = tempo_lav_accessorieC
         tempo_altrelavU = tempo_altrelavC
     else:
         if materiale == 'brall':
             tempo_asportazioneU = tempo_asportazioneC*1.5
-            tempo_preforo = tempo_asportazione*1.5*1.5
+            tempo_preforoU = tempo_asportazione*1.5*1.5
             tempo_lav_accessorieU = tempo_lav_accessorieC*1.5
             tempo_altrelavU = tempo_altrelavC*1.5
         else:
             tempo_asportazioneU = tempo_asportazione*0.8  
-            tempo_preforo = tempo_asportazione*1.5*0.8
+            tempo_preforoU = tempo_asportazione*1.5*0.8
             tempo_lav_accessorieU = tempo_lav_accessorieC*0.8
             tempo_altrelavU = tempo_altrelavC*0.8
 
@@ -226,11 +226,11 @@ if tipo_pezzo =='Chiocciole':
     lpreforo = col6.number_input('inserire lunghezza da preforare', value = 0, step = 1)
     asportazione_preforo = ((math.pi * ((diam_preforo/2) ** 2) * lpreforo ))
     if diam_preforo !=0:
-        tempo_preforo = round(tempo_asportazioneU*asportazione_preforo)
+        tempo_preforo = round(tempo_preforoU*asportazione_preforo)
     else:
         tempo_preforo = 0
     st.text("asportazione mm^2 preforo" + str(asportazione_preforo))
-    st.text("tempo solo tornitura lato A min " + str(tempo_preforo))
+    st.text("tempo preforo " + str(tempo_preforo))
     
     
     st.subheader("Esterno")
