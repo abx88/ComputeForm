@@ -244,7 +244,7 @@ if tipo_pezzo =='Chiocciole':
     #lavorazioni accessorie tornitura
     tempo_lav_accessorie_EC = tempo_lav_accessorieU+tempo_lav_accessorieU*int(diam_partenzaEC/60)
     altre_lavTornEC = st.multiselect('indicare lavorazioni accessorie esterno chiocciola', 
-                                ['spianatura+smussi','spianatura+smussi flangia','filettatura filiera', 'filettatura man.',
+                                ['spianatura+smussi', 'doppia spianatura+smussi','spianatura+smussi flangia', 'filettatura filiera', 'filettatura man.',
                                  'finitura molto precisa', 'gola su esterno','ripulitura', 'altro'])
     n_lavTornEC = len(altre_lavTornEC)
     totale_tempo_lav_accessorieEC = (n_lavTornEC*tempo_lav_accessorie_EC)
@@ -259,7 +259,7 @@ if tipo_pezzo =='Chiocciole':
     altre_lavEC = st.multiselect('indicare lavorazioni su altre macchine esterno chiocciola', 
                                 ['fresatura', 'fresatura flangia', 'foratura flangia', 'incassatura flangia', 
                                  'altre lavorazioni fori flangia', 'chiavetta esterna', 'foratura trasversale',
-                                 'foro ingrassatore', 'altro'])
+                                 'foro ingrassatore', 'disangolatura', 'altro'])
     n_lavEC = len(altre_lavEC)
     if n_lavEC >1:
         tempo_altrelavEC=tempo_altrelavU+(tempo_altrelavU*(diam_partenzaEC/60)/2)
