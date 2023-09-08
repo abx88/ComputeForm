@@ -201,15 +201,18 @@ if tipo_pezzo =='Chiocciole':
     materiale = st.sidebar.radio("materiale", ('bronzo-ottone-avp', 'brall', 'mat_plastico'))
     if materiale == 'bronzo-ottone-avp':
         tempo_asportazioneU = tempo_asportazione
+        tempo_preforo = tempo_asportazione*1.5
         tempo_lav_accessorieU = tempo_lav_accessorieC
         tempo_altrelavU = tempo_altrelavC
     else:
         if materiale == 'brall':
             tempo_asportazioneU = tempo_asportazioneC*1.5
+            tempo_preforo = tempo_asportazione*1.5*1.5
             tempo_lav_accessorieU = tempo_lav_accessorieC*1.5
             tempo_altrelavU = tempo_altrelavC*1.5
         else:
             tempo_asportazioneU = tempo_asportazione*0.8  
+            tempo_preforo = tempo_asportazione*1.5*0.8
             tempo_lav_accessorieU = tempo_lav_accessorieC*0.8
             tempo_altrelavU = tempo_altrelavC*0.8
 
@@ -217,7 +220,7 @@ if tipo_pezzo =='Chiocciole':
     st.sidebar.text("tempo U. lav. accessorie Chiocciole = " + str(tempo_lav_accessorieU))
     st.sidebar.text("tempo U. altre lav. Chiocciole = " + str(tempo_altrelavU))
 
-    st.subheader("preforo")
+    st.subheader("Preforo")
     col5, col6, = st.columns(2)
     diam_preforo = col5.number_input('inserire diametro punta preforo', value = 0, step = 1)
     lpreforo = col6.number_input('inserire lunghezza da preforare', value = 0, step = 1)
