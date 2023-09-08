@@ -201,18 +201,18 @@ if tipo_pezzo =='Chiocciole':
     materiale = st.sidebar.radio("materiale", ('bronzo-ottone-avp', 'brall', 'mat_plastico'))
     if materiale == 'bronzo-ottone-avp':
         tempo_asportazioneU = tempo_asportazione
-        tempo_preforoU = tempo_asportazione*1.5
+        tempo_preforoU = tempo_asportazione
         tempo_lav_accessorieU = tempo_lav_accessorieC
         tempo_altrelavU = tempo_altrelavC
     else:
         if materiale == 'brall':
             tempo_asportazioneU = tempo_asportazioneC*1.5
-            tempo_preforoU = tempo_asportazione*1.5*1.5
+            tempo_preforoU = tempo_asportazione*1.5
             tempo_lav_accessorieU = tempo_lav_accessorieC*1.5
             tempo_altrelavU = tempo_altrelavC*1.5
         else:
             tempo_asportazioneU = tempo_asportazione*0.8  
-            tempo_preforoU = tempo_asportazione*1.5*0.8
+            tempo_preforoU = tempo_asportazione*1.5
             tempo_lav_accessorieU = tempo_lav_accessorieC*0.8
             tempo_altrelavU = tempo_altrelavC*0.8
 
