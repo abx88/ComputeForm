@@ -272,7 +272,7 @@ if tipo_pezzo =='Chiocciole':
 
     #altre lavorazioni
     altre_lavEC = st.multiselect('indicare lavorazioni su altre macchine esterno chiocciola', 
-                                ['fresatura', 'fresatura flangia', 'foratura flangia', 'incassatura flangia', 
+                                ['fresatura', 'foratura', 'maschiatura fori', 'alesatura fori', 'fresatura flangia', 'foratura flangia', 'incassatura flangia', 
                                  'altre lavorazioni fori flangia', 'chiavetta esterna', 'foratura trasversale',
                                  'foro ingrassatore',  'altro'])
     n_lavEC = len(altre_lavEC)
