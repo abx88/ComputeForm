@@ -71,7 +71,7 @@ if tipo_pezzo =='Viti':
     #st.sidebar.text("tempo U. lav. accessorie Viti = " + str(tempo_lav_accessorieU))
     #st.sidebar.text("tempo U. altre lav. Viti = " + str(tempo_altrelavU))
 
-    taglio_int_inox = st.sidebar.checkbox("taglio interrotto inox/R100")
+    taglio_int_inox = st.sidebar.checkbox("taglio interrotto su tornitura lunga")
     if taglio_int_inox == True:
         tempo_asportazioneU=tempo_asportazioneU*1.5
 
