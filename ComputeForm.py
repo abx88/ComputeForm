@@ -115,7 +115,7 @@ if tipo_pezzo =='Viti':
     altre_lavTornA = st.multiselect('indicare lavorazioni accessorie tornio latoA', 
                                 ['maschiatura', 'spianatura+smussi','filettatura filiera', 'filettatura man.',
                                  'foratura', 'foratura profonda', 'alesatura', 'tornitura con contropunta',
-                                 'finitura molto precisa', 'ripulitura', 'seeger1', 'seeger2','tornitura gola/scanalatura','brocciatura esagono','altro'])
+                                 'finitura molto precisa', 'ripulitura', 'seeger1', 'seeger2','tornitura gola/scanalatura','brocciatura esagono', 'raggiatura collegamento scollo','altro'])
     n_lavTornA = len(altre_lavTornA)
     totale_tempo_lav_accessorieA = (n_lavTornA*tempo_lav_accessorieA)
 
@@ -166,7 +166,7 @@ if tipo_pezzo =='Viti':
     altre_lavTornB = st.multiselect('indicare lavorazioni accessorie tornio latoB', 
                                 ['maschiatura', 'spianatura+smussi','filettatura filiera', 'filettatura man.',
                                  'foratura', 'foratura profonda', 'alesatura', 'tornitura con contropunta',
-                                 'finitura molto precisa', 'ripulitura', 'seeger1', 'seeger2','brocciatura esagono','altro'])
+                                 'finitura molto precisa', 'ripulitura', 'seeger1', 'seeger2','brocciatura esagono','raggiatura collegamento scollo','altro'])
     n_lavTornB = len(altre_lavTornB)
     totale_tempo_lav_accessorieB = (n_lavTornB*tempo_lav_accessorieB)
 
